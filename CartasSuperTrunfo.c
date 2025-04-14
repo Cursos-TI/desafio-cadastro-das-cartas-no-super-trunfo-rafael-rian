@@ -49,7 +49,7 @@ int main() {
  float area2, pib2;
  
  printf("escolha uma letra que representa o segundo estado de A ate H\n");
- scanf("%c",&estado2);
+ scanf(" %c",&estado2);
  printf("escolha o codigo da segunda carta de 01 a 04\n");
  scanf("%s",&codigo_da_carta2);
  printf("nome da segunda cidade?\n");
@@ -63,9 +63,9 @@ int main() {
  printf("digite o numero de pontos turisticos da segunda cidade\n");
  scanf("%d",&numero_de_pontos_turisticos2);
 
- printf("Carta 1:Estado: %c\nCodigo: %s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado, codigo_da_carta, nome_da_cidade, populacao, area,pib, numero_de_pontos_turisticos);
+ printf("Carta 1:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado,estado, codigo_da_carta, nome_da_cidade, populacao, area,pib, numero_de_pontos_turisticos);
  
- printf("Carta 2:Estado: %c\nCodigo: %s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado2, codigo_da_carta2, nome_da_cidade2, populacao2, area2,pib2, numero_de_pontos_turisticos2);
+ printf("Carta 2:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado2,estado2, codigo_da_carta2, nome_da_cidade2, populacao2, area2,pib2, numero_de_pontos_turisticos2);
 
 
     return 0;
