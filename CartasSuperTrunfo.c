@@ -24,8 +24,7 @@ int main() {
  char nome_da_cidade[20];
  int populacao, numero_de_pontos_turisticos;  
  float area, pib;
-
-
+ 
    
  printf("escolha uma letra que representa o estado de A ate H\n");
  scanf("%c",&estado);
@@ -42,11 +41,19 @@ int main() {
  printf("digite o numero de pontos turisticos\n");
  scanf("%d",&numero_de_pontos_turisticos);
  
+
+ float densidade_populacional;
+ float pib_per_capita;
+ densidade_populacional= populacao / area;
+ pib_per_capita= pib / populacao;
+
  char estado2;
  char codigo_da_carta2[20];
  char nome_da_cidade2[20];
  int populacao2, numero_de_pontos_turisticos2;  
  float area2, pib2;
+ 
+ 
  
  printf("escolha uma letra que representa o segundo estado de A ate H\n");
  scanf(" %c",&estado2);
@@ -63,10 +70,15 @@ int main() {
  printf("digite o numero de pontos turisticos da segunda cidade\n");
  scanf("%d",&numero_de_pontos_turisticos2);
 
- printf("Carta 1:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado,estado, codigo_da_carta, nome_da_cidade, populacao, area,pib, numero_de_pontos_turisticos);
- 
- printf("Carta 2:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado2,estado2, codigo_da_carta2, nome_da_cidade2, populacao2, area2,pib2, numero_de_pontos_turisticos2);
+ float densidade_populacional2;
+ float pib_per_capita2;
+ densidade_populacional2= populacao2 / area2;
+ pib_per_capita2= pib2 / populacao2;
 
+ printf("Carta 1:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado,estado, codigo_da_carta, nome_da_cidade, populacao, area,pib, numero_de_pontos_turisticos);
+ printf("Densidade Populacional: %.2f km2\nPIB per Capita: %.2f\n",densidade_populacional, pib_per_capita);
+ printf("Carta 2:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\nDensidade Populacional:%.2f km2\nPIB per Capita:%.2f\n",estado2,estado2, codigo_da_carta2, nome_da_cidade2, populacao2, area2,pib2, numero_de_pontos_turisticos2,densidade_populacional2,pib_per_capita2);
+ printf("Densidade Populacional: %.2f km2\nPIB per Capita: %.2f\n",densidade_populacional2, pib_per_capita2);
 
     return 0;
 }
