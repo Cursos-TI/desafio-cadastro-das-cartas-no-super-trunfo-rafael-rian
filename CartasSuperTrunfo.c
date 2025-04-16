@@ -19,14 +19,16 @@ int main() {
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
 
- char estado;
+ char estado;  //declarando as variaveis da carta 1
  char codigo_da_carta[20];
  char nome_da_cidade[20];
- int populacao, numero_de_pontos_turisticos;  
+ int numero_de_pontos_turisticos;  
  float area, pib;
+ unsigned long int populacao;
+ 
  
    
- printf("escolha uma letra que representa o estado de A ate H\n");
+ printf("escolha uma letra que representa o estado de A ate H\n");  //incializando as variaveis com o scanf
  scanf("%c",&estado);
  printf("escolha o codigo da carta de 01 a 04\n");
  scanf("%s",&codigo_da_carta);
@@ -42,20 +44,24 @@ int main() {
  scanf("%d",&numero_de_pontos_turisticos);
  
 
- float densidade_populacional;
+ float densidade_populacional; // ainda declarando variaveis da carta 1
  float pib_per_capita;
  densidade_populacional= populacao / area;
  pib_per_capita= pib / populacao;
+ float superpoder= numero_de_pontos_turisticos + area + pib + populacao + pib_per_capita - densidade_populacional;
 
- char estado2;
+
+ char estado2;    // declarando variaveis da carta 2
  char codigo_da_carta2[20];
  char nome_da_cidade2[20];
- int populacao2, numero_de_pontos_turisticos2;  
+ int numero_de_pontos_turisticos2;  
  float area2, pib2;
+ unsigned long int populacao2;
  
  
  
- printf("escolha uma letra que representa o segundo estado de A ate H\n");
+ 
+ printf("escolha uma letra que representa o segundo estado de A ate H\n"); //incializando as variaveis com o scanf
  scanf(" %c",&estado2);
  printf("escolha o codigo da segunda carta de 01 a 04\n");
  scanf("%s",&codigo_da_carta2);
@@ -67,18 +73,35 @@ int main() {
  scanf("%f",&area2);
  printf("digite o numero do segundo pib\n");
  scanf("%f",&pib2);
- printf("digite o numero de pontos turisticos da segunda cidade\n");
+ printf("digite o numero de pontos turisticos da segunda cidade\n\n");
  scanf("%d",&numero_de_pontos_turisticos2);
 
- float densidade_populacional2;
+ float densidade_populacional2;  // ainda declarando variaveis da carta 2, eu diferenciei a carta 1 da carta 2 apenas colocando o numero "2" no final das variaveis da segunda carta
  float pib_per_capita2;
  densidade_populacional2= populacao2 / area2;
  pib_per_capita2= pib2 / populacao2;
+ float superpoder2= numero_de_pontos_turisticos2 + area2 + pib2 + populacao2 + pib_per_capita2 - densidade_populacional2;
 
  printf("Carta 1:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado,estado, codigo_da_carta, nome_da_cidade, populacao, area,pib, numero_de_pontos_turisticos);
  printf("Densidade Populacional: %.2f km2\nPIB per Capita: %.2f\n",densidade_populacional, pib_per_capita);
+ printf("Super poder: %.2f\n\n",superpoder);
  printf("Carta 2:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\nDensidade Populacional:%.2f km2\nPIB per Capita:%.2f\n",estado2,estado2, codigo_da_carta2, nome_da_cidade2, populacao2, area2,pib2, numero_de_pontos_turisticos2,densidade_populacional2,pib_per_capita2);
  printf("Densidade Populacional: %.2f km2\nPIB per Capita: %.2f\n",densidade_populacional2, pib_per_capita2);
+ printf("Super poder: %.2f\n\n",superpoder2);  // imprimindo os valores das variaveis
+
+printf("Comparação de Cartas:\n");
+printf("População: Carta 1 venceu (%d)\n", populacao > populacao2);
+printf("Área: Carta 1 venceu (%d)\n", area > area2);   // imprimindo os valores das variaveis
+printf("PIB: Carta 1 venceu (%d)\n", pib > pib2);
+printf("Pontos Turísticos: Carta 1 venceu (%d)\n", numero_de_pontos_turisticos > numero_de_pontos_turisticos2);
+printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidade_populacional < densidade_populacional2);
+printf("PIB per Capita: Carta 1 venceu (%d)\n", pib_per_capita > pib_per_capita2);
+printf("Super Poder: Carta 1 venceu (%d)\n", superpoder > superpoder2);
+
+
+
+
+
 
     return 0;
 }
