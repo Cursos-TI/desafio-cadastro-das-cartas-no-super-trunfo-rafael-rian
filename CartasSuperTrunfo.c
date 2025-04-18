@@ -81,7 +81,11 @@ int main() {
  densidade_populacional2= populacao2 / area2;
  pib_per_capita2= pib2 / populacao2;
  float superpoder2= numero_de_pontos_turisticos2 + area2 + pib2 + populacao2 + pib_per_capita2 - densidade_populacional2;
-
+ 
+ 
+ 
+ 
+ 
  printf("Carta 1:\nEstado: %c\nCodigo: %c%s\nNome da Cidade: %s\nPopulação: %d\nArea: %.2f km2\nPIB: %.2f\nNumero de Pontos Turisticos: %d\n",estado,estado, codigo_da_carta, nome_da_cidade, populacao, area,pib, numero_de_pontos_turisticos);
  printf("Densidade Populacional: %.2f km2\nPIB per Capita: %.2f\n",densidade_populacional, pib_per_capita);
  printf("Super poder: %.2f\n\n",superpoder);
@@ -96,11 +100,57 @@ printf("PIB: Carta 1 venceu (%d)\n", pib > pib2);
 printf("Pontos Turísticos: Carta 1 venceu (%d)\n", numero_de_pontos_turisticos > numero_de_pontos_turisticos2);
 printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidade_populacional < densidade_populacional2);
 printf("PIB per Capita: Carta 1 venceu (%d)\n", pib_per_capita > pib_per_capita2);
-printf("Super Poder: Carta 1 venceu (%d)\n", superpoder > superpoder2);
+printf("Super Poder: Carta 1 venceu (%d)\n\n", superpoder > superpoder2);
+printf("Comparação de cartas (Atributo: pib per capita):\nCarta 1 - %s: %.2f\nCarta 2 - %s: %.2f\n",nome_da_cidade,pib_per_capita,nome_da_cidade2,pib_per_capita2);
+if(pib_per_capita>pib_per_capita2){printf("Resultado: Carta 1 (%s) venceu!\n",nome_da_cidade);} else {printf("Resultado: Carta 2 (%s) venceu!\n",nome_da_cidade2);}
 
+int escolha_da_cidade;
+int escolha_do_atributo;
 
+printf("escolha uma cidade pelo numero: numero 1 %s ou numero 2 %s?\n",nome_da_cidade,nome_da_cidade2);
+scanf("%d",&escolha_da_cidade);
 
+switch(escolha_da_cidade){
+    case 1: printf("cidade escolhida foi: %s\n",nome_da_cidade);break;
+    case 2: printf("cidade escolhida foi: %s\n",nome_da_cidade2);break;
+    default: printf("numero invalido");
+    break;
+}
+printf("escolha um atributo pelo numero para comparar: 1 População, 2 Área, 3 Pib, 4 Número de pontos turísticos, 5 Densidade demográfica\n");
+scanf("%d",&escolha_do_atributo);
 
+switch(escolha_do_atributo){
+    case 1: if(populacao>populacao2){printf("a cidade %s venceu\nAtributo: População da cidade 1: %d\n População da cidade 2: %d\n",nome_da_cidade,populacao,populacao2);}
+    else if(populacao<populacao2){printf("a cidade %s venceu\nAtributo: População da cidade 1: %d\n População da cidade 2: %d\n",nome_da_cidade2,populacao,populacao2);}
+    else{printf("empate!\nAtributo: População da cidade 1: %d é igual a População da cidade 2: %d\n",populacao,populacao2);} 
+    break;
+    
+    case 2: if(area>area2){printf("a cidade %s venceu\nAtributo: Área da cidade 1: %.2f\n Área da cidade 2: %.2f\n",nome_da_cidade,area,area2);}
+    else if(area<area2){printf("a cidade %s venceu\nAtributo: Área da cidade 1: %.2f\n Área da cidade 2: %.2f\n",nome_da_cidade2,area,area2);}
+    else{printf("empate!\nAtributo: Área da cidade 1: %.2f é igual a Área da cidade 2: %.2f\n",area,area2);} 
+    break;
+    
+    case 3: if(pib>pib2){printf("a cidade %s venceu\nAtributo: Pib da cidade 1: %.2f\n Pib da cidade 2: %.2f\n",nome_da_cidade,pib,pib2);}
+    else if(pib<pib2){printf("a cidade %s venceu\nAtributo: Pib da cidade 1: %.2f\n Pib da cidade 2: %.2f\n",nome_da_cidade2,pib,pib2);}
+    else{printf("empate!\nAtributo: Pib da cidade 1: %.2f é igual a Pib da cidade 2: %.2f\n",pib,pib2);} 
+    break;
+    
+    case 4: if(numero_de_pontos_turisticos>numero_de_pontos_turisticos2)
+    {printf("a cidade %s venceu\nAtributo: Número de pontos turísticos da cidade 1: %d\n Número de pontos turísticos da cidade 2: %d\n",nome_da_cidade, numero_de_pontos_turisticos, numero_de_pontos_turisticos2);}
+    else if(numero_de_pontos_turisticos<numero_de_pontos_turisticos2)
+    {printf("a cidade %s venceu\nAtributo: Número de pontos turísticos da cidade 1: %d\n Número de pontos turísticos da cidade 2: %d\n",nome_da_cidade2,numero_de_pontos_turisticos, numero_de_pontos_turisticos2);}
+    else{printf("empate!\nAtributo: Número de pontos turísticos da cidade 1: %d é igual a Número de pontos turísticos da cidade 2: %d\n",numero_de_pontos_turisticos, numero_de_pontos_turisticos2);} 
+    break;
+    
+    case 5: if(densidade_populacional<densidade_populacional2)
+    {printf("a cidade %s venceu\nAtributo: Densidade demográfica da cidade 1: %.2f\n Densidade demográfica da cidade 2: %.2f\n",nome_da_cidade, densidade_populacional, densidade_populacional2);}
+    else if(densidade_populacional>densidade_populacional2)
+    {printf("a cidade %s venceu\nAtributo: Densidade demográfica da cidade 1: %.2f\n Densidade demográfica da cidade 2: %.2f\n",nome_da_cidade2,densidade_populacional, densidade_populacional2);}
+    else{printf("empate!\nAtributo: Densidade demográfica da cidade 1: %.2f é igual a Densidade demográfica da cidade 2: %.2f\n",densidade_populacional, densidade_populacional2);} 
+    break;
+    default: printf("numero invalido");
+    break;
+}
 
 
     return 0;
